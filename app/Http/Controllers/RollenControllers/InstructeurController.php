@@ -2,19 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\MedewerkerModel;
+use App\Models\InstructeurModel;
 use Illuminate\Http\Request;
 
-class MedewerkerController extends Controller
+class InstructeurController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('Medewerker.index', 
+        return view('Instructeur.index', 
         [
-            'title' => 'medweerker'
+            'title' => 'Instructeurs in dienst'
         ]);
     }
 

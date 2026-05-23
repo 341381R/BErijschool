@@ -34,6 +34,7 @@ class AuthenticatedSessionController extends Controller
         {
             'klant' => route('Klant.index'),
             'admin' => route('Klant.index'),
+            'instructeur' => route('Instructeur.index'),
             'default' => route('welcome.index'),
         });
     }
