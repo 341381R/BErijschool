@@ -83,7 +83,7 @@ CREATE TABLE VoertuigInstructeur (
     ,VoertuigId INT NOT NULL
     ,InstructeurId INT NOT NULL
     ,DatumToekenning DATE NOT NULL
-    IsActief BIT NOT NULL DEFAULT 1
+    ,IsActief BIT NOT NULL DEFAULT 1
     ,Opmerking VARCHAR(250) DEFAULT NULL
     ,DatumAangemaakt DATETIME(6) NOT NULL DEFAULT (SYSDATE(6))
     ,DatumGewijzigd DATETIME(6) NOT NULL DEFAULT (SYSDATE(6))
