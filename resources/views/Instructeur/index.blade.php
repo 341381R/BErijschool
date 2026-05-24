@@ -21,7 +21,7 @@
             @endif
 
         <div class="mt-3">
-            Aantal Instructeurs: <?php count($instructeurs); ?>
+            Aantal Instructeurs: <?php echo count($instructeurs); ?>
         </div>
 
         <table class="table">
