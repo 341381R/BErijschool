@@ -17,39 +17,31 @@
                 {{ session('success') }} 
                 <button type="button" class="btn-close" aria-label="sluiten" data-bs-dismiss="alert"></button>
             </div>
-            <meta http-equiv="refresh" content="3;url={{ route('Levering.index') }}">
+            <meta http-equiv="refresh" content="3;url={{ route('Instructeur.index') }}">
             @endif
 
         <div class="mt-3">
-            <form action="{{ route('Instructeur.index') }}" method="POST">
-                @csrf
-                @method('GET')
-                Startdatum: <input type="date" name="startDatum" value="{{ request('startDatum') }}">
-                einddatum: <input type="date" name="eindDatum" value="{{ request('eindDatum') }}">
-                <button type="submit" class="btn btn-secondary btn-sm">Maak selectie</button>
-            </form>
+            Aantal Instructeurs: <?php count($instructeurs); ?>
         </div>
 
         <table class="table">
             <thead>
-                <th>Naam leverancier</th>
-                <th>ContactPersoon</th>
-                <th>Stad</th>
-                <th>Productnaam</th>
-                <th>Einddatum levering</th>
-                <th>Verwijder</th>
+                <th>Naam</th>
+                <th>Mobiel</th>
+                <th>Datum in dienst</th>
+                <th>Aantal sterren</th>
+                <th>Voertuigen</th>
             </thead>
             <tbody>
                 
-                @forelse ($producten as $product)
+                @forelse ($instructeurs as $instructeur)
                 <tr>
-                    <td>{{ $product->LeverancierNaam }}</td>
-                    <td>{{ $product->ContactPersoon }}</td>
-                    <td>{{ $product->Stad }}</td>
-                    <td>{{ $product->ProductNaam }}</td>
-                    <td>{{ $product->EinddatumLevering }}</td>
+                    <td>{{ $instructeur->Naam }}</td>
+                    <td>{{ $instructeur->Mobiel }}</td>
+                    <td>{{ $instructeur->DatumInDienst }}</td>
+                    <td>{{ $instructeur->AantalSterren }}</td>
                      <td>
-                        <form action="{{ route('Product.show', $product->Id) }}" method="POST">
+                        <form action="{{ route('Instructeur.index', $instructeur->Id) }}" method="POST">
                             @csrf
                             @method('GET')
                             <button type="submit" class="btn btn-danger btn-sm"><i class="bi bi-x-lg"></i></button>
