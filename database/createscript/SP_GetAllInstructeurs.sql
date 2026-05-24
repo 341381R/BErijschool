@@ -11,7 +11,7 @@ BEGIN
             ,ISTR.DatumInDienst
             ,LENGTH(ISTR.AantalSterren) AS AantalSterren
     FROM Instructeur AS ISTR
-    ORDER BY LENGTH(ISTR.AantalSterren);
+    ORDER BY LENGTH(ISTR.AantalSterren) DESC;
 
 
 END$$
