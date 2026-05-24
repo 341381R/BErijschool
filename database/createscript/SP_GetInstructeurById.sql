@@ -7,8 +7,8 @@ CREATE PROCEDURE SP_GetInstructeurById(
 )
 BEGIN
 
-    SELECT   ISTR.Id
-            ,VRTG.Id
+    SELECT   ISTR.Id AS InstructeurId
+            ,VRTG.Id AS VoertuigId
             ,(CONCAT_WS(" ", ISTR.Voornaam, ISTR.Tussenvoegsel, ISTR.Achternaam)) AS Naam
             ,ISTR.DatumInDienst
             ,LENGTH(ISTR.AantalSterren) AS AantalSterren
