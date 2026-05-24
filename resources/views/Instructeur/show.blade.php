@@ -39,7 +39,7 @@
                             <td>{{ $voertuig->Brandstof }}</td>
                             <td>{{ $voertuig->Rijbewijscategorie }}</td>
                             <td>
-                                <form action="{{ route('Instructeur.index', $voertuig->VoertuigId) }}" method="POST">
+                                <form action="{{ route('Instructeur.edit', $voertuig->VoertuigId) }}" method="POST">
                                     @csrf
                                     @method('GET')
                                     <button type="submit" class="btn btn-large"><i class="bi bi-pencil"></i></button>
