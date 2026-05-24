@@ -48,9 +48,20 @@ class InstructeurController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(MedewerkerModel $medewerkerModel)
+    public function show($id)
     {
-        //
+        $instructeur = $this->allergeenModel->SP_GetInstructeurById($id);
+
+        if (!$instructeur)
+        {
+            return redirect()->route('Instructeur.index')
+                             ->with('error', 'Instructeur is niet gevonden');  
+        }
+
+        return view('Instructeur.show', [
+            'title' => 'Door instructeur gebruikte voertuigen',
+            'instructeur' => $instructeur
+        ]);
     }
 
     /**
