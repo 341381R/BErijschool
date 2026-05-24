@@ -70,10 +70,12 @@ class InstructeurController extends Controller
     public function edit($id)
     {
         $instructeur = $this->instructeurModel->SP_GetVoertuigById($id);
+        $voertuig = $this->instructeurModel->SP_GetAllVoertuigen();
         abort_if(!$instructeur, 404);
         return view('Instructeur.edit', [
             'title' => 'Wijzigen voertuiggegevens',
             'instructeur' => $instructeur,
+            'voertuig' => $voertuig,
         ]);
     }
 
