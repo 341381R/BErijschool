@@ -25,7 +25,8 @@ BEGIN
     ON VRTG.Id = VGIR.VoertuigId
     INNER JOIN TypeVoertuig AS TPVG
     ON TPVG.Id = VRTG.TypeVoertuigId
-    WHERE ISTR.Id = p_id;
+    WHERE ISTR.Id = p_id
+    ORDER BY Rijbewijscategorie;
 
 
 END$$
