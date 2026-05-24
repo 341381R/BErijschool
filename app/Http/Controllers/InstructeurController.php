@@ -25,7 +25,7 @@ class InstructeurController extends Controller
         return view('Instructeur.index', 
         [
             'title' => 'Instructeurs in dienst',
-            'instructeurs' => 'instructeurs'
+            'instructeurs' => $instructeurs
         ]);
     }
 
