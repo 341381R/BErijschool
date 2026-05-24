@@ -50,7 +50,7 @@ class InstructeurController extends Controller
      */
     public function show($id)
     {
-        $instructeur = $this->allergeenModel->SP_GetInstructeurById($id);
+        $instructeur = $this->instructeurModel->SP_GetInstructeurById($id);
 
         if (!$instructeur)
         {
