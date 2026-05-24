@@ -19,4 +19,12 @@ class InstructeurModel extends Model
             ['id' => $id]
         );
     }
+
+     public function SP_GetVoertuigById($id)
+    {
+        return DB::selectOne(
+            'CALL SP_GetVoertuigById(:id)',
+            ['id' => $id]
+        );
+    }
 }
