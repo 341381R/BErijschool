@@ -39,12 +39,20 @@
                     <td>{{ $instructeur->Naam }}</td>
                     <td>{{ $instructeur->Mobiel }}</td>
                     <td>{{ $instructeur->DatumInDienst }}</td>
-                    <td>{{ $instructeur->AantalSterren }}</td>
+                    <td>
+                        @for ($i = 0; $i < 5; $i++)
+                            @if ($i <  $instructeur->AantalSterren )
+                                <span><i class="bi bi-star-fill"></i></span>
+                            @else
+                                <span><i class="bi bi-star"></i></span>
+                            @endif
+                        @endfor
+                    </td>
                      <td>
                         <form action="{{ route('Instructeur.index', $instructeur->Id) }}" method="POST">
                             @csrf
                             @method('GET')
-                            <button type="submit" class="btn btn-danger btn-sm"><i class="bi bi-x-lg"></i></button>
+                            <button type="submit" class="btn btn-md"><i class="bi bi-car-front-fill"></i></button>
                         </form>
                     </td>
                 </tr>
