@@ -7,14 +7,25 @@ use Illuminate\Http\Request;
 
 class InstructeurController extends Controller
 {
+
+    private $instructeurModel;
+
+    public function __construct()
+    {
+        $this->instructeurModel = new InstructeurModel();
+    }
+
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
+        $instructeurs = $this->instructeurModel->SP_GetAllInstructeurs();
+
         return view('Instructeur.index', 
         [
-            'title' => 'Instructeurs in dienst'
+            'title' => 'Instructeurs in dienst',
+            'instructeurs' => 'instructeurs'
         ]);
     }
 
