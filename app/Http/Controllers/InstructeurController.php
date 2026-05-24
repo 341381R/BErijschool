@@ -67,9 +67,14 @@ class InstructeurController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(MedewerkerModel $medewerkerModel)
+    public function edit($id)
     {
-        //
+        $instructeur = $this->instructeurModel->SP_GetInstructeurById($id);
+        abort_if(!$instructeur, 404);
+        return view('Instructeur.edit', [
+            'title' => 'Wijzigen voertuiggegevens',
+            'instructeur' => $instructeur,
+        ]);
     }
 
     /**
