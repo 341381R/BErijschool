@@ -17,7 +17,7 @@
                     <h2 class="col-sm-12 ">Aantal sterren: {{ $instructeur[0]->AantalSterren}}</h2>
 
 
-                    <a href="{{ route('Instructeur.index') }}" class="btn btn-primary mt-2">Toevoegen voertuig</a>
+                    <a href="{{ route('Instructeur.edit') }}" class="btn btn-primary mt-2">Toevoegen voertuig</a>
                 </dl>
                 <table class="table">
                     <thead>
