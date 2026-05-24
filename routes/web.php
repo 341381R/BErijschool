@@ -1,9 +1,9 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\RollenController\KlantController;
-use App\Http\Controllers\RollenController\InstructeurController;
-use App\Http\Controllers\RollenController\AdminController;
+use App\Http\Controllers\KlantController;
+use App\Http\Controllers\InstructeurController;
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
