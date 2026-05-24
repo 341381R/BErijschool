@@ -58,7 +58,7 @@
                 </tr>
                 @empty
                 <tr>
-                    <td colspan="3">Er zijn geen leveringen geweest van producten in deze periode</td>
+                    <td colspan="3">Er zijn geen instructeurs in deze rijschool.</td>
                 </tr>
                 @endforelse
             </tbody>
