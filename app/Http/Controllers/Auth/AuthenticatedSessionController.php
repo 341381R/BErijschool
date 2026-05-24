@@ -33,8 +33,7 @@ class AuthenticatedSessionController extends Controller
         return redirect()->intended(match($role)
         {
             'klant' => route('Klant.index'),
-            'admin' => route('Klant.index'),
-            'instructeur' => route('Instructeur.index'),
+            'rijschoolhouder' => route('Instructeur.index'),
             'default' => route('welcome.index'),
         });
     }

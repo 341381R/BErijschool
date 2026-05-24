@@ -16,7 +16,11 @@ Route::get('/Klant', [KlantController::class, 'index'])
 
 Route::get('/Instructeur', [InstructeurController::class, 'index'])
     ->name('Instructeur.index')
-    ->middleware(['auth', 'role:instructeur,admin']);
+    ->middleware(['auth', 'role:rijschoolhouder']);
+
+Route::get('Instructeur/{id}', [InstructeurController::class, 'show'])
+    ->name('Instructeur.show')
+    ->middleware(['auth', 'role:rijschoolhouder']);
 
 Route::get('/Admin', [AdminController::class, 'index'])
     ->name('Admin.index')
