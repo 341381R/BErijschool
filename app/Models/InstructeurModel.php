@@ -11,4 +11,12 @@ class InstructeurModel extends Model
     {
         return DB::select('CALL SP_GetAllInstructeurs');
     }
+
+    public function SP_GetInstructeurById($id)
+    {
+        return DB::selectOne(
+            'CALL SP_GetInstructeurById(:id)',
+            ['id' => $id]
+        );
+    }
 }
