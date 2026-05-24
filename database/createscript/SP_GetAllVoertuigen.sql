@@ -21,7 +21,7 @@ BEGIN
     INNER JOIN Voertuig AS VRTG
     ON VRTG.Id = VGIR.VoertuigId
     INNER JOIN TypeVoertuig AS TPVG
-    ON TPVG.Id = VRTG.TypeVoertuigId
+    ON TPVG.Id = VRTG.TypeVoertuigId;
 
 
 END$$
