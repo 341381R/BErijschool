@@ -49,7 +49,7 @@
                         @endfor
                     </td>
                      <td>
-                        <form action="{{ route('Instructeur.index', $instructeur->Id) }}" method="POST">
+                        <form action="{{ route('Instructeur.show', $instructeur->Id) }}" method="POST">
                             @csrf
                             @method('GET')
                             <button type="submit" class="btn btn-md"><i class="bi bi-car-front-fill"></i></button>
