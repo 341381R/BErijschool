@@ -28,6 +28,7 @@
                         <th>Brandstof</th>
                         <th>Rijbewijscategorie</th>
                         <th>wijzigen</th>
+                        <th>verwijderen</th>
                     </thead>
                     <tbody>
                         @foreach ($instructeur as $voertuig)
@@ -43,6 +44,14 @@
                                     @csrf
                                     @method('GET')
                                     <button type="submit" class="btn btn-large"><i class="bi bi-pencil"></i></button>
+                                </form>
+                            </td>
+                            <td>
+                                <form action="{{ route('Instructeur.destroy', $instructeur->VoertuigId) }}" method="POST" 
+                                    onsubmit="return confirm('weet u zeker dat u dit voertuig wilt verwijderen?');">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-danger btn-sm"><i class="bi bi-x"></i></button>
                                 </form>
                             </td>
                         </tr>
