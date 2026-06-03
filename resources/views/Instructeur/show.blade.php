@@ -47,7 +47,7 @@
                                 </form>
                             </td>
                             <td>
-                                <form action="{{ route('Instructeur.destroy', $instructeur->VoertuigId) }}" method="POST" 
+                                <form action="{{ route('Instructeur.destroy', $voertuig->VoertuigId) }}" method="POST" 
                                     onsubmit="return confirm('weet u zeker dat u dit voertuig wilt verwijderen?');">
                                     @csrf
                                     @method('DELETE')
