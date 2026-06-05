@@ -21,18 +21,22 @@
                 </div>
             @endif
 
-            <form method="POST" action="{{ route('Allergenen.update', $allergenen->Id) }}">
+            <form method="POST" action="{{ route('Instructeur.index', $instructeur->VoertuigId) }}">
             @csrf
             @method('PUT')
             <div class="mb-3">
-                <label for="InputNaam" class="form-label">Naam</label>
-                <input name="naam" type="text" class="form-control" id="InputNaam" aria-describedby="naamHelp" 
-                    value="{{ old('naam', $allergenen->Naam) }}">
+                <select name="Instructeur">
+                    @foreach ($voertuig as $naam)
+                        <option 
+                            value="{{ $naam->Naam }}"
+                            {{ $instructeur->Naam == $voertuig->Naam ? 'selected' : '' }}
+                            >
+                        </option>
+                    @endforeach
+                </select>
             </div>
             <div class="mb-3">
-                <label for="InputOmschrijving" class="form-label">Omschrijving</label>
-                <input name="omschrijving" type="text" class="form-control" id="InputOmschrijving" aria-describedby="omschrijvingHelp"
-                    value="{{ old('naam', $allergenen->Omschrijving) }}">
+                
             </div>
 
             <button type="submit" class="btn btn-primary">Opslaan</button>
