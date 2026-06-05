@@ -22,6 +22,10 @@ Route::get('Instructeur/{id}', [InstructeurController::class, 'show'])
     ->name('Instructeur.show')
     ->middleware(['auth', 'role:rijschoolhouder']);
 
+Route::delete('Instructeur/{id}', [InstructeurController::class, 'destroy'])
+    ->name('Instructeur.destroy')
+    ->middleware(['auth', 'role:rijschoolhouder']);
+
 Route::get('Instructeur/{id}/edit', [InstructeurController::class, 'edit'])
     ->name('Instructeur.edit')
     ->middleware(['auth', 'role:rijschoolhouder']);
