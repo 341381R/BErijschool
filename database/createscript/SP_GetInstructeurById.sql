@@ -9,6 +9,7 @@ BEGIN
 
     SELECT   ISTR.Id AS InstructeurId
             ,VRTG.Id AS VoertuigId
+            ,VGIR.Id AS VoertuigInstructeurId
             ,(CONCAT_WS(" ", ISTR.Voornaam, ISTR.Tussenvoegsel, ISTR.Achternaam)) AS Naam
             ,ISTR.DatumInDienst
             ,LENGTH(ISTR.AantalSterren) AS AantalSterren
