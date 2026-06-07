@@ -18,6 +18,13 @@
 
 
                     <a href="{{ route('Instructeur.index') }}" class="btn btn-primary mt-2">Toevoegen voertuig</a>
+                    @if (session('success'))
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            {{ session('success') }} 
+                            <button type="button" class="btn-close" aria-label="sluiten" data-bs-dismiss="alert"></button>
+                        </div>
+                        <meta http-equiv="refresh" content="3;url={{ route('Voertuig.index') }}">
+                    @endif
                 </dl>
                 <table class="table">
                     <thead>
