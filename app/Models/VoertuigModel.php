@@ -11,4 +11,13 @@ class VoertuigModel extends Model
     {
         return DB::select('CALL SP_GetAllVoertuigen');
     }
+
+    public function SP_DeleteVoertuig($id)
+    {
+        $result = DB::selectOne('CALL SP_DeleteInstructeur(:id)', [
+            'id' => $id
+        ]);
+
+        return $result->affected ?? [];
+    }
 }
