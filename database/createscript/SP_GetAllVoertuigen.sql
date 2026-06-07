@@ -16,12 +16,13 @@ BEGIN
             ,VRTG.Brandstof
             ,TPVG.Rijbewijscategorie
     FROM Instructeur AS ISTR
-    INNER JOIN VoertuigInstructeur AS VGIR
+    RIGHT JOIN VoertuigInstructeur AS VGIR
     ON ISTR.Id = VGIR.InstructeurId
-    INNER JOIN Voertuig AS VRTG
+    RIGHT JOIN Voertuig AS VRTG
     ON VRTG.Id = VGIR.VoertuigId
-    INNER JOIN TypeVoertuig AS TPVG
-    ON TPVG.Id = VRTG.TypeVoertuigId;
+    RIGHT JOIN TypeVoertuig AS TPVG
+    ON TPVG.Id = VRTG.TypeVoertuigId
+    ORDER BY VRTG.Bouwjaar DESC, ISTR.Achternaam;
 
 
 END$$
