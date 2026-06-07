@@ -71,21 +71,23 @@ class VoertuigController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(VoertuigModel $voertuigModel)
+    public function destroy($id, $isActief)
     {
-        $result = $this->voertuigModel->SP_DeleteVoertuig($id);
-    
+        if ($isActief === 1)
+        {
+            $result = $this->voertuigModel->SP_DeleteVoertuig($id);
+        }
+        else
+        {
+            return redirect()->route('Voertuig.index')
+                             ->with('error', 'Het door u geselecteerde voertuig staat op non actief en kan niet worden verwijderd');
+        }
+
         if ($result > 0)
         {
             return redirect()->route('Voertuig.index')
                              ->with('success', 'Het door u geselecteerde voertuig is verwijderd');
-        } 
-        else if ($result = -1)
-        {
-            return redirect()->route('Voertuig.index')
-                         ->with('error', 'Het door u geselecteerde voertuig staat op non actief en kan niet worden verwijderd');
         }
-
         return redirect()->route('Voertuig.index')
                          ->with('error', 'Het door u geselecteerde voertuig is niet goed verwijderd.');
     }
