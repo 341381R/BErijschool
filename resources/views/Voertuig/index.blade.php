@@ -22,39 +22,37 @@
 
         <table class="table">
             <thead>
-                <th>Naam</th>
-                <th>Mobiel</th>
-                <th>Datum in dienst</th>
-                <th>Aantal sterren</th>
-                <th>Voertuigen</th>
+                <th>Type voertuig</th>
+                <th>Type</th>
+                <th>Kenteken</th>
+                <th>Bouwjaar</th>
+                <th>Brandstof</th>
+                <th>Rijbewijscategorie</th>
+                <th>Instructeur naam</th>
+                <th>Verwijderen</th>
             </thead>
             <tbody>
                 
-                @forelse ($instructeurs as $instructeur)
+                @forelse ($voertuigen as $voertuig)
                 <tr>
-                    <td>{{ $instructeur->Naam }}</td>
-                    <td>{{ $instructeur->Mobiel }}</td>
-                    <td>{{ $instructeur->DatumInDienst }}</td>
-                    <td>
-                        @for ($i = 0; $i < 5; $i++)
-                            @if ($i <  $instructeur->AantalSterren )
-                                <span><i class="bi bi-star-fill"></i></span>
-                            @else
-                                <span><i class="bi bi-star"></i></span>
-                            @endif
-                        @endfor
-                    </td>
+                    <td>{{ $voertuig->TypeVoertuig }}</td>
+                    <td>{{ $voertuig->Type }}</td>
+                    <td>{{ $voertuig->Kenteken }}</td>
+                    <td>{{ $voertuig->Bouwjaar }}</td>
+                    <td>{{ $voertuig->Brandstof }}</td>
+                    <td>{{ $voertuig->Rijbewijscategorie }}</td>
+                    <td>{{ $voertuig->Naam }}</td>
                      <td>
-                        <form action="{{ route('Instructeur.show', $instructeur->Id) }}" method="POST">
+                        <form action="{{ route('Voertuig.index', $voertuig->VoertuigId) }}" method="POST">
                             @csrf
                             @method('GET')
-                            <button type="submit" class="btn btn-md"><i class="bi bi-car-front-fill"></i></button>
+                            <button type="submit" class="btn btn-danger btn-sm"><i class="bi bi-x"></i></button>
                         </form>
                     </td>
                 </tr>
                 @empty
                 <tr>
-                    <td colspan="3">Er zijn geen instructeurs in deze rijschool.</td>
+                    <td colspan="3">Er zijn geen voertuigen in deze rijschool.</td>
                 </tr>
                 @endforelse
             </tbody>
