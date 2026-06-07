@@ -35,6 +35,10 @@ Route::get('/Voertuig', [VoertuigController::class, 'index'])
     ->name('Voertuig.index')
     ->middleware(['auth', 'role:rijschoolhouder']);
 
+Route::get('/Voertuig/{id}/{isactief}', [VoertuigController::class, 'destroy'])
+    ->name('Voertuig.destroy')
+    ->middleware(['auth', 'role:rijschoolhouder']);
+
 Route::get('/Admin', [AdminController::class, 'index'])
     ->name('Admin.index')
     ->middleware(['auth', 'role:admin']);
