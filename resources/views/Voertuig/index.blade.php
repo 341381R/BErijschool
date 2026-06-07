@@ -18,7 +18,14 @@
                 <button type="button" class="btn-close" aria-label="sluiten" data-bs-dismiss="alert"></button>
             </div>
             <meta http-equiv="refresh" content="3;url={{ route('Voertuig.index') }}">
-            @endif
+        @endif
+         @if (session('error'))
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                {{ session('error') }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="sluiten"></button>
+            </div>
+            <meta http-equiv="refresh" content="3;url={{ route('Voertuig.index') }}">
+        @endif
 
         <table class="table">
             <thead>
