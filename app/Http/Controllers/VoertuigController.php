@@ -73,7 +73,7 @@ class VoertuigController extends Controller
      */
     public function destroy($id, $isActief)
     {
-        if ($isActief === 1)
+        if ($isActief == 1)
         {
             $result = $this->voertuigModel->SP_DeleteVoertuig($id);
         }
