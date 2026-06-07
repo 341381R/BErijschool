@@ -14,7 +14,7 @@ class VoertuigModel extends Model
 
     public function SP_DeleteVoertuig($id)
     {
-        $result = DB::selectOne('CALL SP_DeleteInstructeur(:id)', [
+        $result = DB::selectOne('CALL SP_DeleteVoertuig(:id)', [
             'id' => $id
         ]);
 
