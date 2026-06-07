@@ -3,8 +3,8 @@ DROP PROCEDURE IF EXISTS SP_DeleteInstructeur;
 DELIMITER $$
 
 CREATE PROCEDURE SP_DeleteInstructeur(
-    IN p_VoertuigId                 INT
-    IN p_VoertuigInstructeurId      INT
+     IN p_VoertuigId                 INT
+    ,IN p_VoertuigInstructeurId      INT
 )
 
 BEGIN
