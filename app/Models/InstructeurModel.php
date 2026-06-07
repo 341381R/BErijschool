@@ -35,10 +35,11 @@ class InstructeurModel extends Model
         );
     }
 
-    public function SP_DeleteInstructeur($VoertuigInstructeurId)
+    public function SP_DeleteInstructeur($VoertuigId, $VoertuigInstructeurId)
     {
-        $result = DB::selectOne('CALL SP_DeleteInstructeur(:id)', [
-            'id' => $VoertuigInstructeurId
+        $result = DB::selectOne('CALL SP_DeleteInstructeur(:VoertuigId, :VoertuigInstructeurId)', [
+            'VoertuigId' => $VoertuigId,
+            'VoertuigInstructeurId' => $VoertuigInstructeurId
         ]);
 
         return $result->affected ?? [];
