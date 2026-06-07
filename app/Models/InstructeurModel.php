@@ -34,4 +34,13 @@ class InstructeurModel extends Model
             'CALL SP_GetAllVoertuigen',
         );
     }
+
+    public function SP_DeleteInstructeur($VoertuigInstructeurId)
+    {
+        $result = DB::selectOne('CALL SP_DeleteInstructeur(:id)', [
+            'id' => $VoertuigInstructeurId
+        ]);
+
+        return $result->affected ?? [];
+    }
 }
