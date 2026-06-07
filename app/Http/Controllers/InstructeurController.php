@@ -90,8 +90,17 @@ class InstructeurController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(MedewerkerModel $medewerkerModel)
+    public function destroy($InstructeurId, $VoertuigInstructeurId)
     {
-        //
+        $result = $this->instructeurModel->SP_DeleteInstructeur($VoertuigInstructeurId);
+    
+        if ($result > 0)
+        {
+            return redirect()->route('Instructeur.show, InstructeurId')
+                             ->with('success', 'Het door u geselecteerde voertuig is verwijderd');
+        }
+
+        return redirect()->route('Instructeur.show')
+                         ->with('error', 'Het door u geselecteerde voertuig is niet goed verwijderd.');
     }
 }
