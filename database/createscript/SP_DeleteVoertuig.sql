@@ -7,6 +7,8 @@ CREATE PROCEDURE SP_DeleteVoertuig(
 )
 
 BEGIN
+    DELETE FROM VoertuigInstructeur AS VGIR
+        WHERE VGIR.Id = p_id;
     DELETE FROM Voertuig AS VRTG
         WHERE VRTG.Id = p_id;
 
