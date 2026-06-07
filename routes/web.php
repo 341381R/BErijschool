@@ -22,7 +22,7 @@ Route::get('Instructeur/{id}', [InstructeurController::class, 'show'])
     ->name('Instructeur.show')
     ->middleware(['auth', 'role:rijschoolhouder']);
 
-Route::delete('Instructeur/{id}', [InstructeurController::class, 'destroy'])
+Route::delete('Instructeur/{InstructeurId}/{VoertuigId}/{VoertuigInstructeurId}', [InstructeurController::class, 'destroy'])
     ->name('Instructeur.destroy')
     ->middleware(['auth', 'role:rijschoolhouder']);
 
