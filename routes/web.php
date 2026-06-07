@@ -35,7 +35,7 @@ Route::get('/Voertuig', [VoertuigController::class, 'index'])
     ->name('Voertuig.index')
     ->middleware(['auth', 'role:rijschoolhouder']);
 
-Route::get('/Voertuig/{id}/{isactief}', [VoertuigController::class, 'destroy'])
+Route::get('/Voertuig/{id}/{isActief}', [VoertuigController::class, 'destroy'])
     ->name('Voertuig.destroy')
     ->middleware(['auth', 'role:rijschoolhouder']);
 
