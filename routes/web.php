@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\KlantController;
 use App\Http\Controllers\InstructeurController;
+use App\Http\Controllers\VoertuigController;
 use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 
@@ -28,6 +29,10 @@ Route::delete('Instructeur/{InstructeurId}/{VoertuigId}/{VoertuigInstructeurId}'
 
 Route::get('Instructeur/{id}/edit', [InstructeurController::class, 'edit'])
     ->name('Instructeur.edit')
+    ->middleware(['auth', 'role:rijschoolhouder']);
+
+Route::get('/Voertuig', [InstructeurController::class, 'index'])
+    ->name('Voertuig.index')
     ->middleware(['auth', 'role:rijschoolhouder']);
 
 Route::get('/Admin', [AdminController::class, 'index'])
