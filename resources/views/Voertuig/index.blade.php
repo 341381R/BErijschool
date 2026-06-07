@@ -43,7 +43,7 @@
                     <td>{{ $voertuig->Rijbewijscategorie }}</td>
                     <td>{{ $voertuig->Naam }}</td>
                      <td>
-                        <form action="{{ route('Voertuig.index', $voertuig->VoertuigId) }}" method="POST">
+                        <form action="{{ route('Voertuig.index', ['id' => $voertuig->VoertuigId, 'isActief' => $voertuig->IsActief]) }}" method="POST">
                             @csrf
                             @method('GET')
                             <button type="submit" class="btn btn-danger btn-sm"><i class="bi bi-x"></i></button>
