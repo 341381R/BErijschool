@@ -31,7 +31,7 @@ Route::get('Instructeur/{id}/edit', [InstructeurController::class, 'edit'])
     ->name('Instructeur.edit')
     ->middleware(['auth', 'role:rijschoolhouder']);
 
-Route::get('/Voertuig', [InstructeurController::class, 'index'])
+Route::get('/Voertuig', [VoertuigController::class, 'index'])
     ->name('Voertuig.index')
     ->middleware(['auth', 'role:rijschoolhouder']);
 
