@@ -61,22 +61,8 @@ class KlantController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy($id)
+    public function destroy(KlantModel $klantModel)
     {
-        $result = $this->voertuigModel->SP_DeleteVoertuig($id);
-    
-        if ($result > 0)
-        {
-            return redirect()->route('Voertuig.index')
-                             ->with('success', 'Het door u geselecteerde voertuig is verwijderd');
-        } 
-        else if ($result = -1)
-        {
-            return redirect()->route('Voertuig.index')
-                         ->with('error', 'Het door u geselecteerde voertuig staat op non actief en kan niet worden verwijderd');
-        }
-
-        return redirect()->route('Voertuig.index')
-                         ->with('error', 'Het door u geselecteerde voertuig is niet goed verwijderd.');
+        //
     }
 }
