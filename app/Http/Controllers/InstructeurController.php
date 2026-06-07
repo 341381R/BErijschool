@@ -100,7 +100,7 @@ class InstructeurController extends Controller
                              ->with('success', 'Het door u geselecteerde voertuig is verwijderd');
         }
 
-        return redirect()->route('Instructeur.show')
+        return redirect()->route('Instructeur.show', $InstructeurId)
                          ->with('error', 'Het door u geselecteerde voertuig is niet goed verwijderd.');
     }
 }
