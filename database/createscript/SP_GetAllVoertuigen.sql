@@ -15,6 +15,7 @@ BEGIN
             ,VRTG.Bouwjaar
             ,VRTG.Brandstof
             ,TPVG.Rijbewijscategorie
+            ,VRTG.IsActief
     FROM Instructeur AS ISTR
     RIGHT JOIN VoertuigInstructeur AS VGIR
     ON ISTR.Id = VGIR.InstructeurId
