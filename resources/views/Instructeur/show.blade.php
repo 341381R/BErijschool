@@ -23,7 +23,7 @@
                             {{ session('success') }} 
                             <button type="button" class="btn-close" aria-label="sluiten" data-bs-dismiss="alert"></button>
                         </div>
-                        <meta http-equiv="refresh" content="3;url={{ route('Instructeur.index') }}">
+                        <meta http-equiv="refresh" content="3;url={{ route('Instructeur.show', $instructeur[0]->InstructeurId) }}">
                     @endif
                 </dl>
                 <table class="table">
