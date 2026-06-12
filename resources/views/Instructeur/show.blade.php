@@ -1,5 +1,6 @@
 @vite(['resources/css/app.css', 'resources/js/app.js']);
 <!DOCTYPE html>
+<x-app-layout>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
@@ -75,3 +76,4 @@
         </div>
     </body>
 </html>
+</x-app-layout>

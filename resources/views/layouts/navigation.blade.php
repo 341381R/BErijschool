@@ -27,6 +27,24 @@
                 </div>
             @endif
 
+            @if (Auth::check() && Auth::user()->rolename === 'rijschoolhouder')
+                <div class="hidden space-x-8 sm:px-8 sm:ms-10 sm:flex">
+                    <x-nav-link :href="route('Voertuig.index')"
+                                :active="request()->routeIs('Voertuig.index')"> 
+                        {{ __('Voertuigen') }}
+                    </x-nav-link>
+                </div>
+            @endif
+
+            @if (Auth::check() && Auth::user()->rolename === 'rijschoolhouder')
+                <div class="hidden space-x-8 sm:px-8 sm:ms-10 sm:flex">
+                    <x-nav-link :href="route('Instructeur.index')"
+                                :active="request()->routeIs('Instructeur.index')"> 
+                        {{ __('Instructeurs') }}
+                    </x-nav-link>
+                </div>
+            @endif
+
             <!-- Settings Dropdown -->
             <div class="hidden sm:flex sm:items-center sm:ms-6">
                 <x-dropdown align="right" width="48">
