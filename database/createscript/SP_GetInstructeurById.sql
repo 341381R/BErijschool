@@ -21,10 +21,10 @@ BEGIN
             ,TPVG.Rijbewijscategorie
     FROM Instructeur AS ISTR
     LEFT JOIN VoertuigInstructeur AS VGIR
-    ON ISTR.Id = VGIR.InstructeurId
-    INNER JOIN Voertuig AS VRTG
+    ON ISTR.Id = VGIR.InstructeurId AND VGIR.IsActief = 1
+    LEFT JOIN Voertuig AS VRTG
     ON VRTG.Id = VGIR.VoertuigId
-    INNER JOIN TypeVoertuig AS TPVG
+    LEFT JOIN TypeVoertuig AS TPVG
     ON TPVG.Id = VRTG.TypeVoertuigId
     WHERE ISTR.Id = p_id
     ORDER BY Rijbewijscategorie;
