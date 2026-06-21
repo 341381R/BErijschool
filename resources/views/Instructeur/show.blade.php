@@ -37,7 +37,6 @@
                         <th>Rijbewijscategorie</th>
                         <th>wijzigen</th>
                         <th>verwijderen</th>
-                        <th>Ziekte/Verlof</th>
                     </thead>
                     <tbody>
                         @foreach ($instructeur as $voertuig)

@@ -32,6 +32,7 @@
                 <th>Datum in dienst</th>
                 <th>Aantal sterren</th>
                 <th>Voertuigen</th>
+                <th>Ziekte/Verlof</th>
             </thead>
             <tbody>
                 
@@ -54,6 +55,22 @@
                             @csrf
                             @method('GET')
                             <button type="submit" class="btn btn-md"><i class="bi bi-car-front-fill"></i></button>
+                        </form>
+                    </td>
+                    <td>
+                        <form action="{{ route('Instructeur.InstructeurStatusToggle', [
+                                'id' => $instructeur->Id
+                                , 'naam' => $instructeur->Naam
+                                , 'status' => $instructeur->Status]) }}" method="POST" 
+                                onsubmit="return confirm('weet u zeker dat u dit voertuig wilt verwijderen?');">
+                                @csrf
+                                @method('GET')
+                                <button type="submit" class="btn btn-danger btn-sm">@if($instructeur->Status)
+                                    <i class="bi bi-hand-thumbs-up-fill"></i>
+                                    @else
+                                    <i class="bi bi-bandaid"></i>
+                                    @endif
+                                </button>
                         </form>
                     </td>
                 </tr>
