@@ -106,6 +106,7 @@ class InstructeurController extends Controller
 
     public function InstructeurStatusToggle($id, $naam , $status)
     {
+        $this->instructeurModel->SP_ToggleInstructeurStatus($id);
         // status is andersom ondat de parameter nog niet is veranderd
         if ($status)
         {
