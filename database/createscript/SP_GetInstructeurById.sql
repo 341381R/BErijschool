@@ -19,6 +19,7 @@ BEGIN
             ,VRTG.Bouwjaar
             ,VRTG.Brandstof
             ,TPVG.Rijbewijscategorie
+            ,CASE WHEN (SELECT COUNT(*) FROM VoertuigInstructeur VI WHERE VI.VoertuigId = VGIR.VoertuigId) > 1 THEN 1 ELSE 0 END AS Toegewezen
     FROM Instructeur AS ISTR
     LEFT JOIN VoertuigInstructeur AS VGIR
     ON ISTR.Id = VGIR.InstructeurId AND VGIR.IsActief = 1

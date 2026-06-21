@@ -37,6 +37,7 @@
                         <th>Rijbewijscategorie</th>
                         <th>wijzigen</th>
                         <th>verwijderen</th>
+                        <th>Toegewezen</th>
                     </thead>
                     <tbody>
                         @foreach ($instructeur as $voertuig)
@@ -65,6 +66,9 @@
                                             @method('DELETE')
                                             <button type="submit" class="btn btn-danger btn-sm"><i class="bi bi-x"></i></button>
                                         </form>
+                                    </td>
+                                    <td>
+                                        
                                     </td>
                                 </tr>
                             @else
