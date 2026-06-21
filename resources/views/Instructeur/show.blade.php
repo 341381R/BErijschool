@@ -37,35 +37,42 @@
                         <th>Rijbewijscategorie</th>
                         <th>wijzigen</th>
                         <th>verwijderen</th>
+                        <th>Ziekte/Verlof</th>
                     </thead>
                     <tbody>
                         @foreach ($instructeur as $voertuig)
-                        <tr>
-                            <td>{{ $voertuig->TypeVoertuig }}</td>
-                            <td>{{ $voertuig->Type }}</td>
-                            <td>{{ $voertuig->Kenteken }}</td>
-                            <td>{{ $voertuig->Bouwjaar }}</td>
-                            <td>{{ $voertuig->Brandstof }}</td>
-                            <td>{{ $voertuig->Rijbewijscategorie }}</td>
-                            <td>
-                                <form action="{{ route('Instructeur.edit', $voertuig->VoertuigId) }}" method="POST">
-                                    @csrf
-                                    @method('GET')
-                                    <button type="submit" class="btn btn-large"><i class="bi bi-pencil"></i></button>
-                                </form>
-                            </td>
-                            <td>
-                                <form action="{{ route('Instructeur.destroy', [
-                                      'InstructeurId' => $voertuig->InstructeurId
-                                    , 'VoertuigId' => $voertuig->VoertuigId
-                                    , 'VoertuigInstructeurId' => $voertuig->VoertuigInstructeurId]) }}" method="POST" 
-                                    onsubmit="return confirm('weet u zeker dat u dit voertuig wilt verwijderen?');">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="btn btn-danger btn-sm"><i class="bi bi-x"></i></button>
-                                </form>
-                            </td>
-                        </tr>
+                            @if ($voertuig->VoertuigId != null)
+                                <tr>
+                                    <td>{{ $voertuig->TypeVoertuig }}</td>
+                                    <td>{{ $voertuig->Type }}</td>
+                                    <td>{{ $voertuig->Kenteken }}</td>
+                                    <td>{{ $voertuig->Bouwjaar }}</td>
+                                    <td>{{ $voertuig->Brandstof }}</td>
+                                    <td>{{ $voertuig->Rijbewijscategorie }}</td>
+                                    <td>
+                                        <form action="{{ route('Instructeur.edit', $voertuig->VoertuigId) }}" method="POST">
+                                            @csrf
+                                            @method('GET')
+                                            <button type="submit" class="btn btn-large"><i class="bi bi-pencil"></i></button>
+                                        </form>
+                                    </td>
+                                    <td>
+                                        <form action="{{ route('Instructeur.destroy', [
+                                            'InstructeurId' => $voertuig->InstructeurId
+                                            , 'VoertuigId' => $voertuig->VoertuigId
+                                            , 'VoertuigInstructeurId' => $voertuig->VoertuigInstructeurId]) }}" method="POST" 
+                                            onsubmit="return confirm('weet u zeker dat u dit voertuig wilt verwijderen?');">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-danger btn-sm"><i class="bi bi-x"></i></button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            @else
+                                <tr>
+                                    <td colspan="12" class="text-center">Geen voertuigen gekoppeld aan deze instructeur</td>
+                                </tr>
+                            @endif
                         @endforeach
                 </table>
 
