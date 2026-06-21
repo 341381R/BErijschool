@@ -20,7 +20,7 @@ BEGIN
             ,VRTG.Brandstof
             ,TPVG.Rijbewijscategorie
     FROM Instructeur AS ISTR
-    INNER JOIN VoertuigInstructeur AS VGIR
+    LEFT JOIN VoertuigInstructeur AS VGIR
     ON ISTR.Id = VGIR.InstructeurId
     INNER JOIN Voertuig AS VRTG
     ON VRTG.Id = VGIR.VoertuigId
