@@ -103,4 +103,16 @@ class InstructeurController extends Controller
         return redirect()->route('Instructeur.show', $InstructeurId)
                          ->with('error', 'Het door u geselecteerde voertuig is niet goed verwijderd.');
     }
+
+    public function InstructeurStatusToggle($id, $naam , $status)
+    {
+        // status is andersom ondat de parameter nog niet is veranderd
+        if ($status)
+        {
+            return redirect()->route('Instructeur.index')
+                             ->with('success', 'Instructeur' . $naam . 'is ziek/met verlof gemeld');
+        }
+        return redirect()->route('Instructeur.index')
+                             ->with('success', 'Instructeur' . $naam . 'is beter/terug van verlof gemeld');
+    }
 }
