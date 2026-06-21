@@ -27,6 +27,10 @@ Route::delete('Instructeur/{InstructeurId}/{VoertuigId}/{VoertuigInstructeurId}'
     ->name('Instructeur.destroy')
     ->middleware(['auth', 'role:rijschoolhouder']);
 
+Route::get('Instructeur/{id}/{naam}/{status}', [InstructeurController::class, 'InstructeurStatusToggle'])
+    ->name('Instructeur.edit')
+    ->middleware(['auth', 'role:rijschoolhouder']);
+
 Route::get('Instructeur/{id}/edit', [InstructeurController::class, 'edit'])
     ->name('Instructeur.edit')
     ->middleware(['auth', 'role:rijschoolhouder']);
