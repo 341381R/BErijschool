@@ -9,6 +9,7 @@ BEGIN
             ,(CONCAT_WS(" ", ISTR.Voornaam, ISTR.Tussenvoegsel, ISTR.Achternaam)) AS Naam
             ,ISTR.Mobiel
             ,ISTR.DatumInDienst
+            ,ISTR.IsActief AS Status
             ,LENGTH(ISTR.AantalSterren) AS AantalSterren
     FROM Instructeur AS ISTR
     ORDER BY LENGTH(ISTR.AantalSterren) DESC;
