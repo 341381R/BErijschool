@@ -111,9 +111,9 @@ class InstructeurController extends Controller
         if ($status)
         {
             return redirect()->route('Instructeur.index')
-                             ->with('success', 'Instructeur' . $naam . 'is ziek/met verlof gemeld');
+                             ->with('success', 'Instructeur ' . $naam . ' is ziek/met verlof gemeld');
         }
         return redirect()->route('Instructeur.index')
-                             ->with('success', 'Instructeur' . $naam . 'is beter/terug van verlof gemeld');
+                             ->with('success', 'Instructeur ' . $naam . ' is beter/terug van verlof gemeld');
     }
 }
