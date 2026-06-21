@@ -45,7 +45,7 @@ class InstructeurModel extends Model
         return $result->affected ?? [];
     }
 
-    public function ToggleInstructeurStatus($id)
+    public function SP_ToggleInstructeurStatus($id)
     {
         DB::statement(
             'CALL SP_ToggleInstructeurStatus(:id)',

@@ -1,8 +1,8 @@
-DROP PROCEDURE IF EXISTS ToggleInstructeurStatus;
+DROP PROCEDURE IF EXISTS SP_ToggleInstructeurStatus;
 
 DELIMITER $$
 
-CREATE PROCEDURE ToggleInstructeurStatus(
+CREATE PROCEDURE SP_ToggleInstructeurStatus(
     IN instructeur_id INT UNSIGNED
 )
 BEGIN
